@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ebconttask": {
+    "dominikdex": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,20 +20,30 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ebconttask",
+            "outputPath": "dist/dominikdex",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
+              {
+                 "glob": "*.svg",
+               "input": "./node_modules/bootstrap-icons/icons/",
+               "output": "/assets/icons/"
+              },
               "src/favicon.ico",
               "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
-            "scripts": []
+          ],
+          "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.scss",
+              "node_modules/aos/dist/aos.css"
+          ],
+          "scripts": [
+              "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "node_modules/aos/dist/aos.js"
+          ]
           },
           "configurations": {
             "production": {
@@ -72,10 +82,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ebconttask:build:production"
+              "browserTarget": "dominikdex:build:production"
             },
             "development": {
-              "browserTarget": "ebconttask:build:development"
+              "browserTarget": "dominikdex:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +93,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ebconttask:build"
+            "browserTarget": "dominikdex:build"
           }
         },
         "test": {
@@ -107,5 +117,5 @@
       }
     }
   },
-  "defaultProject": "ebconttask"
+  "defaultProject": "dominikdex"
 }
