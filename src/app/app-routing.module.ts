@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { ListComponent } from './components/list/list.component';
 import { ViewComponent } from './components/view/view.component';
 
-/*  Routes für die App & die Detailansicht */
 
 const routes: Routes = [
   { path: '', component: ListComponent },
