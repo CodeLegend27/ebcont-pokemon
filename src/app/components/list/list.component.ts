@@ -36,6 +36,10 @@ export class ListComponent implements OnInit, OnDestroy {
     this.subscriptions.forEach(subscription => subscription ? subscription.unsubscribe() : 0);
   }
 
+ /*  Diese Methode called getNext Methode vom Pokemon Service , dann wird die response arranged und
+  mit der concat methode um die sequenz des calls beizubehalten
+
+  Danach wird das Ergebnis ins  Pokemon Array gepusht*/
   loadMore(): void {
     this.loading = true;
     this.subscription = this.pokemonService.getNext().subscribe(response => {
